@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: burlywood;
+    font-family: 'Courgette', cursive;
+
+}
+nav ul {
+    display: flex;
+    align-items: center;
+    height: 65px;
+    background-color: black;
+    color: white;
+    list-style: none;
+    justify-content: right;
+}
+nav ul li {
+    padding: 0 20px;
+}
+a {
+    color: chocolate;
+    list-style: none;
+    text-decoration: none;
+}
+a:hover, .active {
+    background-color: black;
+    color: red;
+}
+.info {
+    text-align: center;
+}
+
+section {
+    font-size: 18px;
+}
+section h1 {
+    color: rgb(151, 31, 145);
+}
+
+section p {
+    color: rgb(215, 23, 23);
+}
+.info {
+    position: relative;
+    animation: words 5s alternate infinite;
+}
+@keyframes words {
+    0%{ left: 0;} 100%{ left: 20px;}
+}
