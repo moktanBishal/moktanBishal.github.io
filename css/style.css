@@ -10,7 +10,9 @@ body {
     font-family: 'Courgette', cursive;
 
 }
-nav ul {
+
+
+/* nav ul {
     display: flex;
     align-items: center;
     height: 65px;
@@ -21,16 +23,67 @@ nav ul {
 }
 nav ul li {
     padding: 0 20px;
+} */
+
+nav {
+	/* margin-top: 0%;
+	margin-left: 20%; */
+    margin-left: 40%;
+	position: relative;
+	width: 210px;
+	height: 50px;
+	background-color: #34495e;
+	border-radius: 15px;
+	font-size: 0;
 }
-a {
-    color: chocolate;
-    list-style: none;
-    text-decoration: none;
+
+nav a {
+	line-height: 50px;
+	height: 100%;
+	font-size: 15px;
+	display: inline-block;
+	position: relative;
+	z-index: 1;
+	text-decoration: none;
+	text-transform: uppercase;
+	text-align: center;
+	cursor: pointer;
 }
-a:hover, .active {
+
+nav .animation {
+	position: absolute;
+	height: 100%;
+	top: 0;
+	z-index: 0;
+	transition: all .5s ease 0s;
+	border-radius: 50%;
+}
+
+a:nth-child(1) {
+	width: 100px;
+}
+
+a:nth-child(2) {
+	width: 110px;
+}
+
+
+nav .start-home, a:nth-child(1):hover~.animation {
+	width: 100px;
+	left: 0;
+	background-color: #1abc9c;
+}
+nav .start-about, a:nth-child(2):hover~.animation {
+	width: 110px;
+	left: 100px;
+	background-color: #e74c3c;
+}
+
+
+/* a:hover, .active {
     background-color: black;
     color: red;
-}
+} */
 .info {
     text-align: center;
 }
@@ -47,7 +100,7 @@ section p {
 }
 .info {
     position: relative;
-    animation: words 5s alternate infinite;
+    animation: words 3s alternate infinite;
 }
 @keyframes words {
     0%{ left: 0;} 100%{ left: 20px;}

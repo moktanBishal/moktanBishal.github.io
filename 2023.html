@@ -20,8 +20,8 @@
     </div>
     <canvas id="myChart"></canvas>
     <script>
-        let months = ['January 2022', 'February 2022', 'March 2022', 'April 2022', 'May 2022','June 2022', 'July,2022', 'August,2022', 'September,2022',
-             'October,2022', 'November,2022', 'December,2022'];
+        let months = ['January 2023', 'February 2023', 'March 2023', 'April 2023', 'May 2023','June 2023', 'July,2023', 'August,2023', 'September,2023',
+             'October,2023', 'November,2023', 'December,2023'];
         new Chart("myChart", {
             type: "line",
             data: {
@@ -29,13 +29,13 @@
                 datasets: [{
                     label: 'Received',
                     // data: [2000,1800,1600,1400,1400,1900,1600,2600,2200,3200,2700,2200,3200],
-                    data: [0, 0, 0, 0, 0, 2400, 2200,2000,1800,1800,2400,2100],
+                    data: [3100, 2800, 2400, 3400, 2900, 2400, 2200,1700,2700,2100,1500,900],
                     borderColor: "red",
                     fill: false
                 }, {
                     label: 'Returned',
                     // data: [200,400,600,600,600,1000,1300,1700,2100,2500,3000,2500,3200],
-                    data: [0, 0, 0, 0, 0, 0, 200,400,600,600,1000,1300],
+                    data: [1700, 2100, 2500, 3000, 3500, 4000, 4500,5100,5700,6300,6900,7800],
                     borderColor: "green",
                     fill: false
                 }]
