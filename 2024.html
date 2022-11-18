@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2024</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+</script>
+</head>
+<body>
+    <div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <div class="animation start-home"></div>
+            <div class="animation start-about"></div>
+        </nav>
+    </div>
+    <canvas id="myChart"></canvas>
+    <script>
+        let months = ['January 2024', 'February 2024', 'March 2024', 'April 2024', 'May 2024','June 2024', 'July,2024', 'August,2024', 'September,2024',
+             'October,2024', 'November,2024', 'December,2024'];
+        new Chart("myChart", {
+            type: "line",
+            data: {
+                labels: months,
+                datasets: [{
+                    label: 'Received',
+                    // data: [2000,1800,1600,1400,1400,1900,1600,2600,2200,3200,2700,2200,3200],
+                    data: [900, 1900, 1300, 2300, 1600, 2400, 4400,3500,2600,1700,800,2800],
+                    borderColor: "red",
+                    fill: false
+                }, {
+                    label: 'Returned',
+                    // data: [7800,8400,9000,600,600,1000,1300,1700,2100,2500,3000,2500,3200],
+                    data: [7800, 8400, 9000, 9700, 10400, 11100, 12000,12900,13800,14700,15600,16500],
+                    borderColor: "green",
+                    fill: false
+                }]
+            },
+            options: {
+                legend: {
+                    display: false
+                }
+            }
+        });
+    </script>
+</body>
+</html>
