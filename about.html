@@ -16,6 +16,42 @@
             <div class="animation start-about"></div>
         </nav>
     </div>
+
+    <section>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+        <div class="wallet">
+            <button class="enableEthereumButton">Enable Ethereum</button>
+            <h2>Account: <span class="showAccount"></span></h2>
+
+            <div class="qrcode-container">
+                <canvas id="qrcode" class="qrcode"></canvas>
+            </div>
+            <script>
+                const ethereumButton = document.querySelector('.enableEthereumButton');
+                const showAccount = document.querySelector('.showAccount');
+
+                let accounts = [];
+                ethereumButton.addEventListener('click', () => {
+                    generateQRCode();
+                
+                });
+
+                // generating qr code from eth address
+                async function generateQRCode() {
+                    let account = "0xd393a785dab554d387dbabcd3bd452053a888738";
+                    let qrcodeContainer = document.getElementById("qrcode");
+                    qrcodeContainer.innerHTML ="";
+                    new QRious( {
+                        element: qrcodeContainer,
+                        value: account
+                    });
+                    //document.getElementById("qrcode-container").style.display = "block";       
+                    showAccount.innerHTML = account;
+                }  
+            </script>
+        </div>
+    </section>
+
     <section class="info">
         <h1>Project status</h1>
         <p>Unfinished!!!!</p>
