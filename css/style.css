@@ -14,7 +14,7 @@ body {
 nav {
     margin: 0 auto;
 	position: relative;
-	width: 210px;
+	width: 370px;
 	height: 50px;
 	background-color: #34495e;
 	border-radius: 15px;
@@ -32,6 +32,7 @@ nav a {
 	text-transform: uppercase;
 	text-align: center;
 	cursor: pointer;
+	color: #133337;
 }
 
 nav .animation {
@@ -51,6 +52,9 @@ a:nth-child(2) {
 	width: 110px;
 }
 
+a:nth-child(3) {
+	width: 160px;
+}
 
 nav .start-home, a:nth-child(1):hover~.animation {
 	width: 100px;
@@ -63,6 +67,12 @@ nav .start-about, a:nth-child(2):hover~.animation {
 	background-color: #e74c3c;
 }
 
+nav .start-journal, a:nth-child(3):hover~.animation {
+	width: 160px;
+	left: 210px;
+	background-color: #e6e6fa;
+}
+
 .info {
     text-align: center;
 }
@@ -70,12 +80,22 @@ nav .start-about, a:nth-child(2):hover~.animation {
 section {
     font-size: 18px;
 }
-section h1,h2,h3,h4,h5,h6 {
+h1,h2,h3,h4,h5,h6 {
     color: rgb(151, 31, 145);
 }
 
 section p {
     color: rgb(215, 23, 23);
+}
+
+.daily-log {
+	margin-left: 4%;
+}
+.daily-log h1,h2,h3,h4,h5,h6 {
+	text-align: center;
+}
+.daily-log ol li {
+	margin-left: 5%;
 }
 .info {
     position: relative;
