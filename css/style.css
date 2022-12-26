@@ -89,7 +89,7 @@ section p {
 }
 
 .daily-log {
-	margin-left: 4%;
+	margin:1% 4%;
 }
 .daily-log h1,h2,h3,h4,h5,h6 {
 	text-align: center;

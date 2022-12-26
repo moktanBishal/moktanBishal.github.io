@@ -1,9 +1,23 @@
-const button = document.getElementById('button');
-const detail = document.getElementById('detail');
+const inpKey = document.getElementById('inpKey');
+    const inpValue = document.getElementById('inpValue');
+    const btnInsert = document.getElementById('btnInsert');
+    const lsOutput = document.getElementById('lsOutput');
 
-function addElement() {
-    localStorage.setItem('list', detail.value);
+    btnInsert.onclick = function() {
+      const key = inpKey.value;
+      const value = inpValue.value;
 
-    const list = localStorage.getItem('list');
-    document.getElementById('list').innerHTML += "<h3>" + Date() + "</h3><li>"  + list + "</li>" ;
-}
+      
+
+      if (key && value ) {
+        localStorage.setItem(key, value);
+        location.reload();
+      }
+    };
+
+    for( let i=0; i<localStorage.length;i++) {
+      const key = localStorage.key(i);
+      const value = localStorage.getItem(key);
+
+      lsOutput.innerHTML += `${key}<br/> ${value}<hr>`;
+    }
