@@ -63,10 +63,14 @@
         <p>Unsure about topic????</p>
         <p>Work in progress</p>
     </section>
-    <section class="info">
-        <h1>Goal</h1>
-        <a href="./2022.html"><p>Transaction: $15,000</p></a>
 
+    <section class="info">
+        <h2>It has been <span id="gap"></span> weeks since I could have undergrad degree.</h2>
+        <script>
+            let finalUndergradYear = 2018;
+            let d = new Date().getFullYear();
+            document.getElementById('gap').innerHTML = ((d - finalUndergradYear) * 52 - 20)
+        </script>
     </section>
 </body>
 </html>
