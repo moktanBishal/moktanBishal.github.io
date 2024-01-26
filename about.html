@@ -18,59 +18,35 @@
             <div class="animation start-journal"></div>
         </nav>
     </div>
+    <div id="timerDisplay">00:00</div>
 
-    <section>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
-        <div class="wallet">
-            <button class="enableEthereumButton">Enable Ethereum</button>
-            <h2>Account: <span class="showAccount"></span></h2>
-
-            <div class="qrcode-container">
-                <canvas id="qrcode" class="qrcode"></canvas>
-            </div>
-            <script>
-                const ethereumButton = document.querySelector('.enableEthereumButton');
-                const showAccount = document.querySelector('.showAccount');
-
-                let accounts = [];
-                ethereumButton.addEventListener('click', () => {
-                    generateQRCode();
-                
-                });
-
-                // generating qr code from eth address
-                async function generateQRCode() {
-                    let account = "0xd393a785dab554d387dbabcd3bd452053a888738";
-                    let qrcodeContainer = document.getElementById("qrcode");
-                    qrcodeContainer.innerHTML ="";
-                    new QRious( {
-                        element: qrcodeContainer,
-                        value: account
-                    });
-                    //document.getElementById("qrcode-container").style.display = "block";       
-                    showAccount.innerHTML = account;
-                }  
-            </script>
-        </div>
-    </section>
-
-    <section class="info">
-        <h1>Project status</h1>
-        <p>Unfinished!!!!</p>
-    </section>
-    <section class="info">
-        <h1>Capstone</h1>
-        <p>Unsure about topic????</p>
-        <p>Work in progress</p>
-    </section>
-
-    <section class="info">
-        <h2>It has been <span id="gap"></span> weeks since I could have undergrad degree.</h2>
-        <script>
-            let finalUndergradYear = 2018;
-            let d = new Date().getFullYear();
-            document.getElementById('gap').innerHTML = ((d - finalUndergradYear) * 52 - 20)
-        </script>
-    </section>
+    <script>
+      // Function to format time in mm:ss
+      function formatTime(seconds) {
+        const minutes = Math.floor(seconds / 60);
+        const remainingSeconds = seconds % 60;
+        return `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
+      }
+    
+      // Function to start the meditation timer
+      function startMeditationTimer(durationInSeconds) {
+        let remainingTime = durationInSeconds;
+    
+        const timerInterval = setInterval(function () {
+          document.getElementById('timerDisplay').textContent = formatTime(remainingTime);
+    
+          if (remainingTime <= 0) {
+            clearInterval(timerInterval);
+            document.getElementById('timerDisplay').textContent = 'Meditation Complete!';
+            // Add any additional actions you want to perform at the end of meditation
+          }
+    
+          remainingTime--;
+        }, 1000);
+      }
+    
+      // Example: Start a 5-minute meditation timer
+      startMeditationTimer(5 * 60);
+    </script>
 </body>
 </html>
