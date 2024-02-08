@@ -1,52 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
-    <link rel="stylesheet" href="./css/style.css">
-</head>
-<body>
-    <div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="journal.html">Journal</a>
-            <div class="animation start-home"></div>
-            <div class="animation start-about"></div>
-            <div class="animation start-journal"></div>
-        </nav>
-    </div>
-    <div id="timerDisplay">00:00</div>
-
-    <script>
-      // Function to format time in mm:ss
-      function formatTime(seconds) {
-        const minutes = Math.floor(seconds / 60);
-        const remainingSeconds = seconds % 60;
-        return `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
-      }
-    
-      // Function to start the meditation timer
-      function startMeditationTimer(durationInSeconds) {
-        let remainingTime = durationInSeconds;
-    
-        const timerInterval = setInterval(function () {
-          document.getElementById('timerDisplay').textContent = formatTime(remainingTime);
-    
-          if (remainingTime <= 0) {
-            clearInterval(timerInterval);
-            document.getElementById('timerDisplay').textContent = 'Meditation Complete!';
-            // Add any additional actions you want to perform at the end of meditation
-          }
-    
-          remainingTime--;
-        }, 1000);
-      }
-    
-      // Example: Start a 5-minute meditation timer
-      startMeditationTimer(5 * 60);
-    </script>
-</body>
-</html>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-out; /* Animation for container */
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  h2 {
+    color: #333;
+    margin-top: 20px;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+  }
+  .week {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+  }
+  h3 {
+    color: #666;
+    margin-top: 10px;
+  }
+  .day {
+    margin-bottom: 5px;
+    padding-left: 10px;
+    border-left: 3px solid #ccc;
+    animation: fadeInDay 0.5s ease-out; /* Animation for days */
+  }
+  .day:nth-child(odd) {
+    background-color: #f9f9f9;
+  }
+  @keyframes fadeInDay {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
